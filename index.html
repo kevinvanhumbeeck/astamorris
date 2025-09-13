@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astamorris 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kevin Van Humbeeck">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <img id="logo" src="img/logo.png" alt="Logo" width="850" height="383">
+        <hr />
+        <div class="desc">
+            Bestellen kan <span class="highlight">tot 1 oktober 2025.</span> <br />
+            Uw bestelling is definitief na betaling op rekeningnummer : <br />
+            <span class="highlight">BE68 7555 7149 3034</span> <br />
+            met als mededeling : <br />
+            <span class="highlight">Astamorris + uw naam</span> <br />
+        </div>
+        <hr />
+        <div class="desc">
+            <form method="post" action="mail.php">
+                <div class="left">
+                    <div>
+                        Unisex & oversized. <br />
+                        Niet zo'n fan van baggy? Downsize. <br /><br />
+                    </div>
+                    <div class="product">
+                        <h3>Astamorris T-Shirt</h3>
+                        <img id="tshirtImg" src="img/tshirt_white.png" alt="Astamorris T-Shirt" width="250">
+                        <div class="price">Prijs: € 30,00</div>
+                        <label for="sizeA">Maat:</label>
+                        <select id="sizeA" name="sizeA" required>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <br>
+                        <label for="colorA">Kleur:</label>
+                        <select id="colorA" name="colorA" required>
+                            <option value="white">White</option>
+                            <option value="black">Black</option>
+                            <option value="cream">Cream</option>
+                        </select>
+                        <br>
+                        <label for="amountA">Aantal:</label>
+                        <input type="number" id="amountA" name="amountA" min="1" value="1" required style="width: 30px;">
+                        <br>
+                        <button type="button" id="addA">Voeg toe</button>
+                    </div>
+                    <div class="product">
+                        <h3>Astamorris Sweater</h3>
+                        <img id="sweaterImg" src="img/sweater_black.png" alt="Astamorris Sweater" width="250">
+                        <div class="price">Prijs: € 30,00</div>
+                        <label for="sizeB">Maat:</label>
+                        <select id="sizeB" name="sizeB" required>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <br>
+                        <label for="colorB">Kleur:</label>
+                        <select id="colorB" name="colorB" required>
+                            <option value="black">Black</option>
+                            <option value="cream">Cream</option>
+                            <option value="stone">Stone</option>
+                            <option value="grey">Grey</option>
+                        </select>
+                        <br>
+                        <label for="amountB">Aantal:</label>
+                        <input type="number" id="amountB" name="amountB" min="1" value="1" required style="width: 30px;">
+                        <br>
+                        <button type="button" id="addB">Voeg toe</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" autocomplete="on" required>
+                    <label for="firstname">Voornaam:</label>
+                    <input type="text" id="firstname" name="firstname" autocomplete="given-name" required>
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="name" autocomplete="family-name" required>
+                    <label for="shipping">Verzenden?</label>
+                    <select id="shipping" name="shipping" required onchange="toggleAddressFields()">
+                        <option value="nee">Nee, ik haal af in Nijlen</option>
+                        <option value="ja" onclick="addShippingToBasket()">Ja, graag verzenden (€ 6,95)</option>
+                    </select>
+                    <label for="street">Straat:</label>
+                    <input type="text" id="street" name="street" autocomplete="street-address" required>
+                    <label for="number">Nummer:</label>
+                    <input type="text" id="number" name="number" required>
+                    <label for="postalcode">Postcode:</label>
+                    <input type="text" id="postalcode" name="postalcode" required>
+                    <label for="city">Stad:</label>
+                    <input type="text" id="city" name="city" required>
+                    <label for="phone">Telefoon:</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                    <br />
+                    <div id="basket" style="border:1px solid #ccc; padding:10px; border-radius:8px; margin-bottom:12px;">
+                        <strong>Winkelmandje:</strong>
+                        <div id="basketItems"><em>Geen producten toegevoegd.</em></div>
+                    </div>
+                    <input type="hidden" id="basketTotal" name="basketTotal" value="0">
+                    <input type="hidden" id="basketItems" name="basketItems" value="">
+                    <button type="submit">Bestel</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
