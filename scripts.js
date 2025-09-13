@@ -15,7 +15,7 @@ function addToBasket(type) {
         item.size = document.getElementById('sizeB').value;
         item.color = document.getElementById('colorB').value;
         item.amount = parseInt(document.getElementById('amountB').value, 10);
-        item.price = 30;
+        item.price = 45;
         btnId = 'addB';
     }
     basket.push(item);
