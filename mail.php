@@ -16,7 +16,7 @@
         <hr />
         <div class="desc">
             Bedankt voor je bestelling! <br />
-            U mag <span class="highlight">&euro; </span> overschrijven op rekeningnummer <span class="highlight">BE12 3456 7890 1234</span> met vermelding <span class="highlight">Astamorris  </span>. <br />
+            U mag <span class="highlight">&euro; </span> overschrijven op rekeningnummer <span class="highlight">BE68 7555 7149 3034</span> met vermelding <span class="highlight">Astamorris  </span>. <br />
             U ontvangt een mail wanneer uw bestelling naar u werd verzonden of wanneer u deze kan ophalen.
             <br><br>
                     </div>
