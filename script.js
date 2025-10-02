@@ -114,9 +114,47 @@ function updateHiddenBasket() {
 }
 
 window.onload = function() {
+    // Check if ordering period has ended (after October 1, 2025)
+    const currentDate = new Date();
+    const orderDeadline = new Date('2025-10-01T23:59:59');
+    
+    if (currentDate > orderDeadline) {
+        disableOrdering();
+        return;
+    }
+    
     updateBasketDisplay();
     toggleAddressFields();
 };
+
+function disableOrdering() {
+    // Disable all form elements
+    const formElements = document.querySelectorAll('input, select, button');
+    formElements.forEach(element => {
+        element.disabled = true;
+    });
+    
+    // Show a message in the basket area
+    const basketDisplay = document.getElementById('basketItemsDisplay');
+    if (basketDisplay) {
+        basketDisplay.innerHTML = '<em style="color: #b30000;">Bestellen is niet meer mogelijk.</em>';
+    }
+    
+    // Update submit hint
+    const submitHint = document.getElementById('submitHint');
+    if (submitHint) {
+        submitHint.innerHTML = 'Bestellen is gesloten per 1 oktober 2025.';
+        submitHint.style.color = '#b30000';
+        submitHint.style.display = 'block';
+    }
+    
+    // Add visual indication that ordering is closed
+    const form = document.querySelector('form');
+    if (form) {
+        form.style.opacity = '0.6';
+        form.style.pointerEvents = 'none';
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.product button').forEach((btn, idx) => {

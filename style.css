@@ -150,6 +150,16 @@ ul li {
     border-radius:8px;
     margin-bottom:12px;
 }
+
+/* Ordering closed styles */
+#orderingClosed {
+    background-color: #ffe6e6;
+    border: 2px solid #ffcccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
 @media (min-width: 850px) {
     .desc form {
         display: flex;
